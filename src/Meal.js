@@ -20,7 +20,7 @@ const Meal = ({ meal }) => {
     <article>
       <h1>{meal.title}</h1>
       <img src={imageUrl} alt="recipe" />
-      <ul>
+      <ul className="instructions">
         <li>Preparation time: {meal.readyInMinutes} minutes</li>
         <li>Number of servings: {meal.servings}</li>
       </ul>
