@@ -9,7 +9,8 @@ function App() {
     setCalories(e.target.value);
   };
 
-  const getMealData = () => {
+  const getMealData = (e) => {
+    e.preventDefault();
     fetch(
       `https://api.spoonacular.com/mealplanner/generate?apiKey=9b076a7b0bf948fa81036292fbaf30e9&timeFrame=day&targetCalories=${calories}`
     )
@@ -25,14 +26,16 @@ function App() {
 
   return (
     <div className="App">
-      <section className="controls">
-        <input
-          type="number"
-          placeholder="Calories (e.g. 2000)"
-          onChange={handleChange}
-        />
-      </section>
-      <button onClick={getMealData}>Get Daily Meal Plan</button>
+      <form onSubmit={getMealData}>
+        <section className="controls">
+          <input
+            type="number"
+            placeholder="Calories (e.g. 2000)"
+            onChange={handleChange}
+          />
+        </section>
+        <button>Get Daily Meal Plan</button>
+      </form>
       {mealData && <MealList mealData={mealData} />}
     </div>
   );
