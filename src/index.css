@@ -44,6 +44,18 @@ button:hover {
   background-color: #6a0fd3;
 }
 
+.error {
+  padding: 1rem;
+  max-width: 18rem;
+  line-height: 1.7;
+  text-align: center;
+  color: red;
+  background-color: #fff;
+  border-radius: 10px;
+  margin: 1rem;
+  box-shadow: 5px 5px 5px rgba(0,0,0,.3);
+}
+
 main {
   display: flex;
   flex-direction: column;
